@@ -6,6 +6,7 @@ class App {
     constructor() {
         this.initializeControllers();
         this.setupNavigation();
+        this.setupSidebar();
         this.loadInitialView();
     }
 
@@ -13,6 +14,34 @@ class App {
         this.customerController = new CustomerController();
         this.itemController = new ItemController();
         this.orderController = new OrderController();
+    }
+
+    setupSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebarClose = document.getElementById('sidebar-close');
+
+        if (sidebarToggle) {
+            sidebarToggle.addEventListener('click', () => {
+                sidebar.classList.add('show');
+            });
+        }
+
+        if (sidebarClose) {
+            sidebarClose.addEventListener('click', () => {
+                sidebar.classList.remove('show');
+            });
+        }
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && 
+                !sidebar.contains(e.target) && 
+                !sidebarToggle.contains(e.target) && 
+                sidebar.classList.contains('show')) {
+                sidebar.classList.remove('show');
+            }
+        });
     }
 
     setupNavigation() {
@@ -25,9 +54,25 @@ class App {
             }
         });
 
-        document.getElementById('nav-customer')?.addEventListener('click', () => this.loadView('customer'));
-        document.getElementById('nav-item')?.addEventListener('click', () => this.loadView('item'));
-        document.getElementById('nav-order')?.addEventListener('click', () => this.loadView('order'));
+        document.getElementById('nav-customer')?.addEventListener('click', () => {
+            this.loadView('customer');
+            this.closeSidebarOnMobile();
+        });
+        document.getElementById('nav-item')?.addEventListener('click', () => {
+            this.loadView('item');
+            this.closeSidebarOnMobile();
+        });
+        document.getElementById('nav-order')?.addEventListener('click', () => {
+            this.loadView('order');
+            this.closeSidebarOnMobile();
+        });
+    }
+
+    closeSidebarOnMobile() {
+        if (window.innerWidth <= 768) {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.remove('show');
+        }
     }
 
     async loadView(viewName) {
@@ -74,6 +119,5 @@ class App {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    new App();
-}); 
+// Initialize the app
+new App(); 

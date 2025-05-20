@@ -211,7 +211,35 @@ table {
     margin-top: 100px;
 }
 
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
 
+.sidebar .btn {
+    transition: all 0.2s ease;
+}
+
+.sidebar .btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .btn.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content Adjustment */
+.flex-grow-1 {
+    margin-left: 250px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .popup-box {
         flex-direction: column;
@@ -289,5 +317,22 @@ table {
     }
     .main-content {
         padding: 15px;
+    }
+
+    .sidebar {
+        width: 0 !important;
+        overflow: hidden;
+    }
+    
+    .sidebar.show {
+        width: 250px !important;
+    }
+    
+    .flex-grow-1 {
+        margin-left: 0;
+    }
+    
+    .main-content {
+        padding: 15px !important;
     }
 }
