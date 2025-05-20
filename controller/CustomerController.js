@@ -23,7 +23,6 @@ export class CustomerController {
     }
 
     setupEventListeners() {
-        // Remove any existing event listeners
         const buttons = ['customer-save', 'customer-update', 'customer-delete', 'customer-reset'];
         buttons.forEach(id => {
             const button = document.getElementById(id);
@@ -33,13 +32,11 @@ export class CustomerController {
             }
         });
 
-        // Add new event listeners
         document.getElementById('customer-save')?.addEventListener('click', () => this.saveCustomer());
         document.getElementById('customer-update')?.addEventListener('click', () => this.updateCustomer());
         document.getElementById('customer-delete')?.addEventListener('click', () => this.deleteCustomer());
         document.getElementById('customer-reset')?.addEventListener('click', () => this.resetForm());
 
-        // Setup table click handler
         const tbody = document.getElementById('customer-tbody');
         if (tbody) {
             tbody.addEventListener('click', (e) => {

@@ -23,7 +23,6 @@ export class ItemController {
     }
 
     setupEventListeners() {
-        // Remove any existing event listeners
         const buttons = ['item-save', 'item-update', 'item-delete', 'item-reset'];
         buttons.forEach(id => {
             const button = document.getElementById(id);
@@ -33,13 +32,11 @@ export class ItemController {
             }
         });
 
-        // Add new event listeners
         document.getElementById('item-save')?.addEventListener('click', () => this.saveItem());
         document.getElementById('item-update')?.addEventListener('click', () => this.updateItem());
         document.getElementById('item-delete')?.addEventListener('click', () => this.deleteItem());
         document.getElementById('item-reset')?.addEventListener('click', () => this.resetForm());
 
-        // Setup table click handler
         const tbody = document.getElementById('item-tbody');
         if (tbody) {
             tbody.addEventListener('click', (e) => {

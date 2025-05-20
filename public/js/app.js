@@ -16,7 +16,6 @@ class App {
     }
 
     setupNavigation() {
-        // Remove any existing event listeners
         const navButtons = ['nav-customer', 'nav-item', 'nav-order'];
         navButtons.forEach(id => {
             const button = document.getElementById(id);
@@ -26,7 +25,6 @@ class App {
             }
         });
 
-        // Add new event listeners
         document.getElementById('nav-customer')?.addEventListener('click', () => this.loadView('customer'));
         document.getElementById('nav-item')?.addEventListener('click', () => this.loadView('item'));
         document.getElementById('nav-order')?.addEventListener('click', () => this.loadView('order'));
@@ -40,7 +38,6 @@ class App {
                 return;
             }
             
-            // Update active navigation button
             const navButtons = ['nav-customer', 'nav-item', 'nav-order'];
             navButtons.forEach(id => {
                 const button = document.getElementById(id);
@@ -77,7 +74,6 @@ class App {
     }
 }
 
-// Initialize the application when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     new App();
 }); 

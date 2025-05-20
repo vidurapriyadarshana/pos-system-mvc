@@ -22,7 +22,6 @@ export class OrderController {
             const html = await response.text();
             document.getElementById('main-content').innerHTML = html;
             
-            // Set current date
             const date = new Date();
             const formatDate = date.toLocaleDateString('en-GB', {
                 day: '2-digit',
@@ -41,7 +40,6 @@ export class OrderController {
     }
 
     setupEventListeners() {
-        // Customer select handler
         document.getElementById('customer-select').addEventListener('change', (e) => {
             this.selectedCustomerId = e.target.value;
             const customer = customers_db.find(c => c.id.toString() === this.selectedCustomerId);
@@ -51,7 +49,6 @@ export class OrderController {
             }
         });
 
-        // Item select handler
         document.getElementById('item-select').addEventListener('change', (e) => {
             this.selectedItemId = e.target.value;
             const item = item_db.find(i => i.id.toString() === this.selectedItemId);
@@ -60,13 +57,8 @@ export class OrderController {
             }
         });
 
-        // Add to cart button
         document.getElementById('add-to-cart').addEventListener('click', () => this.addToCart());
-
-        // Clear cart button
         document.getElementById('clear-cart').addEventListener('click', () => this.clearCart());
-
-        // Place order button
         document.getElementById('place-order').addEventListener('click', () => this.placeOrder());
     }
 
