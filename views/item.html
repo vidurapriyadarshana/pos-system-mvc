@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="main-content">
+        <h5 class="text-warning fw-bold mb-4" id="item-id"></h5>
+
+        <form class="mb-5">
+            <div class="row mb-3">
+                <div class="col-0 col-sm-0 col-md-0 col-lg-3 col-xl-3 col-xxl-3">
+                    <label for="item-name" class="form-label">Item Name</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
+                    <input type="text" id="item-name" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-0 col-sm-0 col-md-0 col-lg-3 col-xl-3 col-xxl-3">
+                    <label for="price" class="form-label">Price</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
+                    <input type="text" id="price" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-0 col-sm-0 col-md-0 col-lg-3 col-xl-3 col-xxl-3">
+                    <label for="qty" class="form-label">Quantity</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
+                    <input type="text" id="qty" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-0 col-sm-0 col-md-0 col-lg-3 col-xl-3 col-xxl-3">
+                    <label for="desc" class="form-label">Description</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
+                    <input type="text" id="desc" class="form-control">
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center gap-3">
+                <button type="button" class="btn btn-save" id="item-save">Save</button>
+                <button type="button" class="btn btn-update" id="item-update">Update</button>
+                <button type="button" class="btn btn-delete" id="item-delete">Delete</button>
+                <button type="reset" class="btn btn-reset" id="item-reset">Reset</button>
+            </div>
+        </form>
+
+        <div class="table-responsive">
+            <table class="table table-bordered text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Item ID</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody id="item-tbody"></tbody>
+            </table>
+        </div>
+    </div>
+</div> 
