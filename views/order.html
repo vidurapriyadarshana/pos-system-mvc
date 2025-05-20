@@ -1,87 +1,87 @@
 <div class="container">
-    <div class="main-content">
-        <div class="id-with-date">
-            <h5 class="text-warning fw-bold mb-4" id="order-id"></h5>
-            <h5 id="order-date"></h5>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <h5 class="mb-0">Customer Details</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <label for="customer-select" class="form-label">Select Customer</label>
-                            <select class="form-select" id="customer-select">
-                                <option value="">Select Customer</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Address</label>
-                            <p id="customer-address" class="form-control-plaintext"></p>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Contact</label>
-                            <p id="customer-contact" class="form-control-plaintext"></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Add Items</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <label for="item-select" class="form-label">Select Item</label>
-                            <select class="form-select" id="item-select">
-                                <option value="">Select Item</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="item-qty" class="form-label">Quantity</label>
-                            <input type="number" class="form-control" id="item-qty" min="1">
-                        </div>
-                        <button type="button" class="btn btn-primary" id="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Cart</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Item</th>
-                                        <th>Price</th>
-                                        <th>Qty</th>
-                                        <th>Total</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="cart-tbody"></tbody>
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="3" class="text-end"><strong>Total:</strong></td>
-                                        <td colspan="2"><strong id="order-total">0.00</strong></td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <button type="button" class="btn btn-danger" id="clear-cart">Clear Cart</button>
-                            <button type="button" class="btn btn-success" id="place-order">Place Order</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="content">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h5 class="text-primary" id="order-id"></h5>
+      <h5 id="order-date"></h5>
     </div>
-</div> 
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-header bg-light">
+            <h5 class="mb-0">Customer Details</h5>
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <label for="customer-select" class="form-label">Select Customer</label>
+              <select class="form-select" id="customer-select">
+                <option value="">Select Customer</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Address</label>
+              <p id="customer-address" class="form-control-plaintext border-bottom"></p>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Contact</label>
+              <p id="customer-contact" class="form-control-plaintext border-bottom"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header bg-light">
+            <h5 class="mb-0">Add Items</h5>
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <label for="item-select" class="form-label">Select Item</label>
+              <select class="form-select" id="item-select">
+                <option value="">Select Item</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="item-qty" class="form-label">Quantity</label>
+              <input type="number" class="form-control" id="item-qty" min="1">
+            </div>
+            <button type="button" class="btn btn-primary" id="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-light">
+            <h5 class="mb-0">Cart</h5>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-striped table-hover border">
+                <thead class="table-light">
+                  <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="cart-tbody"></tbody>
+                <tfoot class="table-group-divider">
+                  <tr>
+                    <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                    <td colspan="2"><strong id="order-total">0.00</strong></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <div class="d-flex justify-content-between mt-3">
+              <button type="button" class="btn btn-danger" id="clear-cart">Clear Cart</button>
+              <button type="button" class="btn btn-success" id="place-order">Place Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
